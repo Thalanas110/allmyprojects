@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list of all my projects</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('new.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .overlay {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(3px);
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .project-description {
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .tech-badge {
+            background: linear-gradient(90deg, #f0f4f8, #e6eefc);
+            color: #1f2937;
+            padding: 0.35rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(31,41,55,0.06);
+            box-shadow: 0 2px 6px rgba(31,41,55,0.06);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .link-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .github-link {
+            background: linear-gradient(135deg, #333, #555);
+            color: white;
+        }
+
+        .github-link:hover,
+        .github-link:focus {
+            background: linear-gradient(135deg, #555, #777);
+            transform: scale(1.05);
+            outline: 2px solid rgba(255, 255, 255, 0.5);
+            outline-offset: 2px;
+        }
+
+        .live-link {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+        }
+
+        .live-link:hover,
+        .live-link:focus {
+            background: linear-gradient(135deg, #2980b9, #1f4e79);
+            transform: scale(1.05);
+            outline: 2px solid rgba(255, 255, 255, 0.5);
+            outline-offset: 2px;
+        }
+
+        .icon {
+            font-size: 1rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .project-card {
+                padding: 1.5rem;
+            }
+
+            .project-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .link-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .project-card {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="container">
+            <header>
+                <h1>My Projects</h1>
+                <p class="subtitle">ion wanna list all my projects in the portfoliom so here ya go</p>
+                <p class="subtitle">Only those worthy will be listed there.</p>
+            </header>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be dynamically generated here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const projects = [
+            {
+                title: "Portfolio Website",
+                description: "Snow themed personal portfolio website hahaha for me only",
+                githubUrl: "https://github.com/Thalanas110/adriaan-portfolio",
+                liveUrl: "https://adriaandimate.vercel.app",
+                tech: ["Tailwind CSS", "React", "Node.js"]
+            },
+            {
+                title: "E-commerce Platform",
+                description: "Full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.",
+                githubUrl: "https://github.com/Thalanas110/updated-camflea",
+                liveUrl: "https://updated-camfleatest.vercel.app/",
+                tech: ["Vanilla", "Node.js", "Express", "Supabase", "PostgreSQL", "Tailwind CSS"]
+            },
+            {
+                title: "Personal homepage",
+                description: "basically just an entire about me page hahaha",
+                githubUrl: "https://github.com/Thalanas110/personalpage",
+                liveUrl: "https://adriaanmdimate.netlify.app/",
+                tech: ["React", "Tailwind CSS", "Node.js"]
+            },
+            {
+                title: "Practicum vlogsite",
+                description: "Practicum vlogsite with data visualization dashboard, containing interactive charts and reports. Also made sir loudel cry.",
+                githubUrl: "https://github.com/zionren/OJTblogsite",
+                liveUrl: "https://practicumoneblogsite.vercel.app",
+                tech: ["Vanilla", "Node.js", "Supabase", "PostgreSQL"]
+            },
+            {
+                title: "rpw hood attendance system",
+                description: "Attendance System for the now-dissolved Gazelvouer hood in RPW",
+                githubUrl: "#update-with-your-github-url",
+                liveUrl: "https://attendance-tracking-self.vercel.app/",
+                tech: ["Vanilla", "Node.js", "PostgreSQL", "Supabase"]
+            },
+            {
+                title: "poem selectors",
+                description: "Poem selection panes that I did for my now ex-girlfriend. All displayed on the website, just click to select. Although these should no longer be here, some of my best UI/UX works are here.Under maintenance to remove ALL names and only the UI + poems will remain.",
+                githubUrl: "https://github.com/Thalanas110/poemselectors/",
+                liveUrl: "https://poemselections.netlify.app/",
+                tech: ["Vanilla"]
+            },
+            {
+                title: "anon corkboard",
+                description: "Simple anonymous corkboard system that I used for Gazelvouer Monthsary 2",
+                githubUrl: "https://corkboardnew.vercel.app/",
+                liveUrl: "https://github.com/zionren/corkboard",
+                tech: ["Vanilla", "PostgreSQL", "Node.js", "Supabase"]
+            },
+            {
+                title: "rp log out system",
+                description: "crapping myself up with a logout system for rp hood council members of a specific hood that needs more fixing and is barely working at all",
+                githubUrl: "https://github.com/Thalanas110/arcanumlogout/",
+                liveUrl: "https://arcanumlogout.vercel.app/",
+                tech: ["Vanilla", "Node.js", "PostgreSQL", "Supabase"]
+            },
+            {
+                title: "blogsite api",
+                description: "Backend only API using Vanilla PHP and MySQL inside XAMPP, currently still being fixed.",
+                githubUrl: "https://corkboardnew.vercel.app/",
+                liveUrl: "https://github.com/zionren/corkboard",
+                tech: ["PHP", "MySQL"]
+            },
+            {
+                title: "chursh website",
+                description: "Website for my church where I am a part of the media team.",
+                githubUrl: "https://corkboardnew.vercel.app/",
+                liveUrl: "https://github.com/zionren/corkboard",
+                tech: ["React", "Tailwind CSS", "Node.js", "Supabase", "PostgreSQL"]
+            },
+        ];
+
+        // Function to create project cards
+        function createProjectCard(project, index) {
+            return `
+                <div class="project-card" style="animation-delay: ${index * 0.1}s">
+                    <h3 class="project-title">${project.title}</h3>
+                    <p class="project-description">${project.description}</p>
+                    <div class="tech-list">
+                        ${project.tech ? project.tech.map(t => `<span class="tech-badge">${t}</span>`).join('') : ''}
+                    </div>
+                    <div class="project-links">
+                        <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="link-button github-link">
+                            <span class="icon">📁</span>
+                            GitHub
+                        </a>
+                        <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="link-button live-link">
+                            <span class="icon">🌐</span>
+                            Live Site
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render projects on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectsGrid = document.getElementById('projectsGrid');
+            const projectCards = projects.map((project, index) => createProjectCard(project, index)).join('');
+            projectsGrid.innerHTML = projectCards;
+
+            // Add smooth scroll behavior for better UX
+            document.documentElement.style.scrollBehavior = 'smooth';
+        });
+
+        // Add some interactive features
+        document.addEventListener('click', function(e) {
+            const linkButton = e.target.closest('.link-button');
+            if (linkButton) {
+                // Add a subtle animation when clicking links
+                linkButton.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    linkButton.style.transform = '';
+                }, 150);
+            }
+        });
+    </script>
+</body>
+</html>
