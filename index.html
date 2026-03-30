@@ -239,13 +239,14 @@
     <script>
 
         const projects = [
+            // serious or part-serious projects
             {
                 // portfolio website with the snow ones, completed 03 October 2025
                 title: "Portfolio Website",
-                description: "Snow themed personal portfolio website hahaha for me only",
+                description: "Nuke themed portfolio website lol",
                 githubUrl: "",
-                liveUrl: "https://adriaansportfolio.netlify.app/",
-                tech: ["Tailwind CSS", "React", "Node.js"]
+                liveUrl: "https://adriaansportfolio.vercel.app/",
+                tech: ["React", "Tailwind CSS", "Node.js", "Tanstack Start", "EmailJS"]
             },
             {
                 // i care center church website with RBAC, completed 14 December 2025
@@ -256,12 +257,28 @@
                 tech: ["React", "Tailwind CSS", "Node.js", "Supabase", "PostgreSQL", "LeafletJS"]
             },
             {
+                // Media Remote Tool, unified OBS + ProPresenter remote control system
+                title: "Media Remote Tool",
+                description: "A real-time web-based production control dashboard that unifies OBS scene switching and ProPresenter slide control into a single operator interface, designed for live church livestream environments.",
+                githubUrl: "https://github.com/Thalanas110/obs-propres-remote-icc",
+                liveUrl: "#", // not yet deployed lols
+                tech: ["React", "Tanstack Start", "Node.js", "WebSockets", "ProPresenter API", "OBS WebSocket", "Tailwind CSS"]
+            },
+            {
                 // devotion website, completed  03 December 2025
                 title: "Devotion Webpage",
                 description: "Devotion website I did with full admin dashboard so I could just use this instead of randomizing in my notes app on my phone & track devotions better",
-                githubUrl: "https://github.com/Thalanas110/DevotionPage",
-                liveUrl: "https://adriaansportfolio.netlify.app/",
+                githubUrl: "#", // hidden!
+                liveUrl: "https://adriaansdevotions.netlify.app/",
                 tech: ["React", "Vite", "Node.js", "Supabase", "PostgreSQL", "Tailwind CSS"]
+            },
+            {
+                // game I am betatesting rn, bad website so I remmade it completely, completed 12 December 2025
+                title: "WoD website remake",
+                description: "Original website by Tjdog19 & CuriosAnt, remade by me with React with permission from Tea and Python. All credits goes to the original creators.",
+                githubUrl: "#",// hidden! this is a top secret lol
+                liveUrl: "https://warofdots.net/",
+                tech: ["React", "Tailwind CSS", "Node.js"]
             },
             {
                 // CSP312A/L, CSP322A/L, CSE316A/L, CSP225A/L, CSC221A/L, completed 17 December 2025
@@ -280,11 +297,11 @@
                 tech: ["React", "Tailwind CSS", "Node.js"]
             },
             {
-                // sir loudel's OJT vlogsite that I may rewrite, completed 26 Jul 2025
+                // sir loudel's OJT vlogsite that I may rewrite, completed 26 Jul 2025, rewrote this 2026 in under 4 hours
                 title: "Practicum vlogsite",
                 description: "Practicum vlogsite with data visualization dashboard, containing interactive charts and reports. Also made sir loudel cry.",
                 githubUrl: "https://github.com/zionren/OJTblogsite",
-                liveUrl: "https://practicumoneblogsite.vercel.app",
+                liveUrl: "https://practicumoneblogsite.vercel.app", // new version
                 tech: ["Vanilla", "Node.js", "Supabase", "PostgreSQL"]
             },
             {
@@ -296,28 +313,11 @@
                 tech: ["React", "Tailwind CSS", "Node.js", "OpenWeatherMap"]
             },
             {
-                // game I am betatesting rn, bad website so I remmade it completely, completed 12 December 2025
-                title: "WoD website remake",
-                description: "Original website by Tjdog19 & CuriosAnt, remade by me with React with permission from Tea and Python. All credits goes to the original creators.",
-                githubUrl: "https://github.com/warofdots/website-v3",// not shown
-                liveUrl: "https://warofdots.net/",
-                tech: ["React", "Tailwind CSS", "Node.js"]
-            },
-            {
                 // my bucketlist, still to be updated, mvp completed 12 December 2023 with updates  
                 title: "bucketlist",
                 description: "Simple bucketlist for me. Well, basically, my 2nd ever project upon return to coding, back in 2023.",
                 githubUrl: "https://github.com/Thalanas110/Easter_egg",
                 liveUrl: "https://moralesbucketlist.netlify.app/",
-                tech: ["Vanilla"]
-            },
-            // random stuff
-            {
-                // Mary Chan Soberano, completed 25 August 2025, all poem sites in spans from May 20 to August 20
-                title: "poem selectors",
-                description: "Poem selection panes that I did for my now ex-girlfriend. All displayed on the website, just click to select. Although these should no longer be here, some of my best UI/UX works are here.Under maintenance to remove ALL names and only the UI + poems will remain.",
-                githubUrl: "https://github.com/Thalanas110/poemselectors/",
-                liveUrl: "https://poemselections.netlify.app/",
                 tech: ["Vanilla"]
             },
             {
@@ -327,6 +327,15 @@
                 githubUrl: "https://github.com/Thalanas110/arcanumcorkboard2",
                 liveUrl: "https://arcanumcorkboard.netlify.app/",
                 tech: ["React", "Tailwind CSS", "Node.js", "PostgreSQL", "Supabase"]
+            },
+            // random stuff I made lol
+            {
+                // Mary Chan Soberano, completed 25 August 2025, all poem sites in spans from May 20 to August 20
+                title: "poem selectors",
+                description: "Poem selection panes that I did for my now ex-girlfriend. All displayed on the website, just click to select. Although these should no longer be here, some of my best UI/UX works are here.Under maintenance to remove ALL names and only the UI + poems will remain.",
+                githubUrl: "https://github.com/Thalanas110/poemselectors/",
+                liveUrl: "https://poemselections.netlify.app/",
+                tech: ["Vanilla"]
             },
             {
                 title: "rpw hood attendance system",
